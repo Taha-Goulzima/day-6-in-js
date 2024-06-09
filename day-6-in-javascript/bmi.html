@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <label for="weight">weight(kg)</label>
+    <input type="number" id="weight" />
+    <br />
+    <label for="height">height(m)</label>
+    <input type="number" id="height" />
+    <button type="button" onclick="calculatBMI()">calculat BMI</button>
+
+    <script>
+      function bmiCalc(weight, height) {
+        var bmi = weight / Math.pow(height, 2);
+        return bmi;
+      }
+      function calculatBMI(){
+      let weight = document.getElementById("weight").value;
+      let height = document.getElementById("height").value;
+    
+    let bmi = bmiCalc(weight, height)
+      if (bmi < 16) {
+        alert("u are underweight");
+      }
+      if (18.5 < bmi && bmi < 25) {
+        alert("you are normal");
+      }
+      if (bmi > 25) {
+        alert("u are overweight");
+      }
+    }
+      //Math.pow(7,5)=7^5=16807
+    </script>
+  </body>
+ 
+ 
+  
+</html>

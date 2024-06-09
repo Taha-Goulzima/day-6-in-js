@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+<body>
+  <input type="text" id="nom" />
+  <input type="number" id="note" />
+  <button onclick="ajouteNote()">ajoute Note</button>
+  <table>
+    <thead>
+      <tr>
+        <th>nom</th>
+        <th>note</th>
+      </tr>
+    </thead>
+    <tbody id="table-body"></tbody>
+  </table>
+
+  <script>
+    let notes = [ 
+      { nom: "ali", note: "20" },
+      { nom: "s2", note: "33" },
+      { nom: "s3", note: "23" },
+    ];
+
+    function afficherNotes(data) {
+      let tbody = document.getElementById('table-body');
+      tbody.innerHTML = ""; // Clear previous table content
+
+      // Loop through data and populate the table
+      data.forEach(item => {
+        let tr = document.createElement('tr');
+        tr.innerHTML = `<td>${item.nom}</td><td>${item.note}</td>`;
+        tbody.appendChild(tr);
+      });
+    }
+
+    function ajouteNote() {
+      let nom = document.getElementById('nom').value;
+      let note = document.getElementById('note').value;
+      
+      // Push the new note to the notes array
+      notes.push({ nom: nom, note: note });
+
+      // Update the table
+      afficherNotes(notes);
+    }
+
+    // Initial rendering
+    afficherNotes(notes);
+  </script>
+</body>
+</html>

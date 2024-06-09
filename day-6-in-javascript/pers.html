@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let getData = new Promise(function (resolve, reject) {
+        setTimeout(() => {
+          var p = Math.random();
+          p = p * 100 + 1;
+          p = Math.floor(p);
+          if (p > 20) {
+            resolve("its a win");
+          } else if (p < 20) {
+            reject("its a lose");
+          }
+        }, 3000);
+      });
+      getData
+        .then(function (data) {
+          console.log(data);
+        })
+        .catch(function (err) {
+          console.log(err);
+        }).finally(()=>console.log("try again"));
+        
+
+    </script>
+  </body>
+</html>

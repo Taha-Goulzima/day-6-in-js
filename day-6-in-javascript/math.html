@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let double = (value) => {
+        return new Promise(function (resolve, reject) {
+          resolve(value * 2);
+        });
+      };
+      let addTen = (value) => {
+        return new Promise(function (resolve, reject) {
+          resolve(value + 10);
+        });
+      };
+      let multiplyByThree = (value) => {
+        return new Promise(function (resolve, reject) {
+          resolve(value * 3);
+        });
+      };
+
+      double(5)
+        .then(addTen)
+        .then(multiplyByThree)
+        .then((result) => {
+          console.log(result);
+        });
+    </script>
+  </body>
+</html>

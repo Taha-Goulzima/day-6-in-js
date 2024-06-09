@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="his">put his name</label>
+    <input type="text" id="his">
+    <label for="her">put her name</label>
+    <input type="text" id="her">
+    <button type="button"  onclick="calc()">your love percentage</button>
+    <div id="result"></div>
+
+    <script>
+        function calc(){ 
+        var n= Math.random();
+        n= (n*100)+1;
+        n= Math.floor(n);
+       document.querySelector('#result').innerHTML = 'your love percentage is '+n+' '+' %' 
+    }
+    </script>
+</body>
+</html>
